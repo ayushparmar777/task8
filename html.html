@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/IMAGES/favicon.ico">
+    <title>TASK8</title>
+</head>
+<style>
+div#d1{
+margin-top:200px;
+width:700px;
+position:absolute;
+right:520px;
+background: rgba(45, 117, 218, 0);
+    box-shadow: 0 8px 32px 0 rgba(8, 23, 230, 0.37);
+    backdrop-filter: blur( 0.5px );
+    -webkit-backdrop-filter: blur( 0.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 )
+}
+div#d2{
+margin-top:50px;
+position:absolute;
+right:770px;
+background: rgba(45, 117, 218, 0);
+    box-shadow: 0 8px 32px 0 rgba(8, 23, 230, 0.37);
+    backdrop-filter: blur( 0.5px );
+    -webkit-backdrop-filter: blur( 0.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 )
+}
+div#d3{
+position:relative;
+top:50px;
+left: 900px;
+}
+</style>
+<body background="taxi.jpg">
+    
+			<div class="header" style=background-color:>
+				
+				<div id="d3">
+				<h1  style=font-size:50px;color:yellow>
+				VECHICLE DETAILS PORTAL
+				</h1>
+				</div>
+				
+			</div>
+
+      
+			
+		
+
+                  		<div id="d2" align=center>
+                  		<input    placeholder="Vechicle Number" id="in1" name='y' / > <br/> 
+				<button onclick="lw()"  class="btn">Run</button>				
+				</div> 
+				<pre><div align=center id="d1" style="color:yellow;"> <h3 align=center></h3>
+				</div></pre>
+				
+			
+		
+                  
+              
+
+<script>
+        function lw() {
+                
+                var i = document.getElementById("in1").value
+
+                var xhr = new XMLHttpRequest();
+                
+                xhr.open("GET", "http://192.168.1.104/cgi-bin/mahesh.py?x=" + i, true);
+               
+                xhr.send();
+
+                xhr.onload = function() {
+                        var output = xhr.responseText;
+                        document.getElementById("d1").innerHTML = output;
+                }
+}
+
+</script>
+<img id="img1" src="minion.gif" width="200" height="200">
+
+<style>
+img#img1{
+    position: absolute;
+    top: 200px;
+    left: 0px;
+}
+
+</style>
+</body><html>
